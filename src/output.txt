@@ -1,0 +1,28 @@
+Outcome: Draw!
+User Balance: $500.00
+Computer Balance: $500.00
+Outcome: User Wins!
+User Balance: $600.00
+Computer Balance: $400.00
+Outcome: Computer Wins!
+User Balance: $500.00
+Computer Balance: $500.00
+Outcome: User Wins!
+User Balance: $600.00
+Computer Balance: $400.00
+Outcome: User Wins!
+User Balance: $700.00
+Computer Balance: $300.00
+Outcome: User Wins!
+User Balance: $800.00
+Computer Balance: $200.00
+Outcome: User Wins!
+User Balance: $900.00
+Computer Balance: $100.00
+Outcome: User Wins!
+User Balance: $1,000.00
+Computer Balance: $0.00
+
+User: $1,000.00
+Computer: $0.00
+User Wins!
