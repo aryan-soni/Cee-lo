@@ -285,7 +285,7 @@ public class CeeloGame {
     
   }
   
-  /** Concludes game by writing results to output.txt and returning a shortened version of the game results
+  /** Concludes game by writing results to results.txt and returning a shortened version of the game results
     * @return results The results of the game
     */
   public String gameOver() {
@@ -298,10 +298,10 @@ public class CeeloGame {
      // add the winner to the results String, so results displays both players' final balances and the final outcome
     results += "\r\n" + this.getWinner() + "!";
 
-    // try outputting entire game's results to output.txt
+    // try outputting entire game's results to results.txt
     try {
       
-      PrintWriter outputFile = new PrintWriter("output.txt");
+      PrintWriter outputFile = new PrintWriter("results.txt");
       outputFile.println(this.fullGameResults + "\n" + results); // output result of each round and final results
       outputFile.close();
       

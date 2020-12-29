@@ -82,7 +82,7 @@ public class ButtonsController implements ActionListener {
       JLabel endCurrentGameLabel = new JLabel("<html>Game Status: GAME OVER!<br>" + "User has " 
          + money.format(this.game.user.getBalance()) + ", Computer has " +  
          money.format(this.game.computer.getBalance()) + ".<br>" + this.game.getWinner() 
-         + "!<br>Results written to output.txt.</html>");
+         + "!<br>Results written to results.txt.</html>");
       
       endCurrentGameLabel.setFont(new Font ("Futura", Font.PLAIN, 16));
       endCurrentGameLabel.setForeground(Color.white);
@@ -103,7 +103,7 @@ public class ButtonsController implements ActionListener {
       // output results of the game
       // gameOver() method returns game results and writes results to text file
       
-      JLabel endGameLabel = new JLabel("<html>" + this.game.gameOver() + "<br>Results written to output.txt <html/>");
+      JLabel endGameLabel = new JLabel("<html>" + this.game.gameOver() + "<br>Results written to results.txt <html/>");
       
       endGameLabel.setFont(new Font ("Futura", Font.PLAIN, 16));
       endGameLabel.setForeground(Color.white);
@@ -121,7 +121,7 @@ public class ButtonsController implements ActionListener {
       this.gameStatus.setText(
          "<html> Game Status: GAME OVER!<br>" + "User has " + money.format(this.game.user.getBalance()) +
          ", Computer has " +  money.format(this.game.computer.getBalance()) + ".<br>" + this.game.getWinner() 
-         + "!<br>Results written to output.txt.</html>"
+         + "!<br>Results written to results.txt.</html>"
       );
       
       this.game.gameOver(); // writes final results to output file
