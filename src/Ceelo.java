@@ -19,7 +19,8 @@ public class Ceelo
     
     // set up the JFrame 
     JFrame frame = new JFrame("Ceelo");
-    view.setBackground(Color.BLACK); // black background
+    view.setBackground(new Color(255, 140, 0)); // orange background
+    frame.pack();
     frame.setLocation(400, 20);
     frame.setSize(675, 800);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

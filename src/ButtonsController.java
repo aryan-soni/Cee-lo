@@ -4,6 +4,7 @@
 */
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.text.NumberFormat;
 
@@ -13,8 +14,10 @@ public class ButtonsController implements ActionListener {
   private CeeloGame game;
   private JTextField bet;
   private JLabel gameStatus;
+  private UIManager UI = new UIManager();
   
-  /** Constructs ButtonsController class by linking it to the relevant Model (CeeloGame), JTextField, and JLabel
+  /** Constructs ButtonsController class by linking it to the relevant Model (CeeloGame), JTextField, and JLabel. Also
+    * sets up the UI Manager
     * @param game
     * @param bet
     * @param gameStatus
@@ -24,6 +27,13 @@ public class ButtonsController implements ActionListener {
     this.game = game;
     this.bet = bet;
     this.gameStatus = gameStatus;
+    
+    this.UI.put("OptionPane.background", new Color(255, 140, 0));
+    this.UI.put("Panel.background", new Color(255, 140, 0));
+    UIManager.put("OptionPane.minimumSize", new Color(255, 140, 0));
+    UIManager.put("OptionPane.messageFont", new Font("Futura", Font.PLAIN, 14));
+    UIManager.put("OptionPane.buttonFont", new Font("Futura", Font.PLAIN, 14));
+
     
   }
   
@@ -66,13 +76,19 @@ public class ButtonsController implements ActionListener {
     }
     
     // at this point, check if the user wishes to start a new game
-    if(e.getActionCommand() == "End Current Game and Start New Game"){
+    if(e.getActionCommand() == "Restart Game"){
       
       // show results from the end of the current game
-      JOptionPane.showMessageDialog(this.game.getView(), "Game Status: GAME OVER!\n" + "User has " 
+      JLabel endCurrentGameLabel = new JLabel("<html>Game Status: GAME OVER!<br>" + "User has " 
          + money.format(this.game.user.getBalance()) + ", Computer has " +  
-         money.format(this.game.computer.getBalance()) + ".\n" + this.game.getWinner() 
-         + "!\nResults written to output.txt.");
+         money.format(this.game.computer.getBalance()) + ".<br>" + this.game.getWinner() 
+         + "!<br>Results written to output.txt.</html>");
+      
+      endCurrentGameLabel.setFont(new Font ("Futura", Font.PLAIN, 16));
+      endCurrentGameLabel.setForeground(Color.white);
+      
+      JOptionPane.showMessageDialog(this.game.getView(), endCurrentGameLabel, "Cee-lo: Restart Game",
+                    JOptionPane.INFORMATION_MESSAGE, new ImageIcon("../imgs/outcome.png"));
       
       this.gameStatus.setText("");
       this.bet.setText("");
@@ -84,8 +100,16 @@ public class ButtonsController implements ActionListener {
     // else if the user wishes to end the game
     else if(e.getActionCommand() == "End Game"){
       
-      // output results of the game; gameOver() method returns game results and writes results to text file
-      JOptionPane.showMessageDialog(this.game.getView(), this.game.gameOver() +"\nResults written to output.txt");
+      // output results of the game
+      // gameOver() method returns game results and writes results to text file
+      
+      JLabel endGameLabel = new JLabel("<html>" + this.game.gameOver() + "<br>Results written to output.txt <html/>");
+      
+      endGameLabel.setFont(new Font ("Futura", Font.PLAIN, 16));
+      endGameLabel.setForeground(Color.white);
+      
+      JOptionPane.showMessageDialog(this.game.getView(), endGameLabel, "Cee-lo: End Game",
+                    JOptionPane.INFORMATION_MESSAGE, new ImageIcon("../imgs/outcome.png"));
       
       System.exit(1); // exit
       

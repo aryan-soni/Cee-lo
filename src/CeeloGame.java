@@ -1,6 +1,5 @@
 /** CeeloGame
 *  Models a game of Ceelo
-*  Last Modified: November 3, 2020
 *  @author Aryan Soni
 */
 
