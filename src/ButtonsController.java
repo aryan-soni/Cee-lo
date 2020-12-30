@@ -102,7 +102,7 @@ public class ButtonsController implements ActionListener {
             // output results of the game
             // gameOver() method returns game results and writes results to text file
 
-            JLabel endGameLabel = new JLabel("<html>" + this.game.gameOver() + "<br>Results written to results.txt <html/>");
+            JLabel endGameLabel = new JLabel("<html>" + this.game.gameOver() + "<br> Results written to results.txt </html>");
 
             endGameLabel.setFont(new Font("Futura", Font.PLAIN, 16));
             endGameLabel.setForeground(Color.white);
