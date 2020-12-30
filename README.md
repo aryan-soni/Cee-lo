@@ -28,4 +28,4 @@ After a game concludes, the results of each of the game's rounds and the game's 
 
 ## Running the Program
 
-To run this program, [clone this repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) and run/compile the code on an IDE that supports Java. This program is optimized to run on MacOS.
+To run this program, [clone this repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) and run/compile *BankingOnIt.java* in the *src* directory on an IDE that supports Java. This program is optimized to run on MacOS.
